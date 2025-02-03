@@ -1,0 +1,253 @@
+#Introdução à programação
+#Discentes: Letícia Beatriz Freire de Sousa e Eli Ramalho de Araújo
+#Docente: Priscilla Suene 
+#Turma: INFO1M
+
+import turtle 
+
+screen = turtle.Screen()
+turtle.setup(1000, 600)
+t = turtle.Turtle()
+t.shape("turtle")
+turtle.colormode(255)
+
+#Funções do código
+
+def retangulo_base(largura, altura):
+    for i in range(2):
+        t.forward(largura)
+        t.right(90)
+        t.forward(altura)
+        t.right(90)
+
+def conj_retangulo_maior():
+    retangulo_base(175, 81.6)
+    t.penup()
+    t.right(90)
+    t.forward(118.2)
+    t.left(90)
+    t.pendown()
+    retangulo_base(175, 81.6)
+
+def conj_retangulo_menor():
+    retangulo_base(160, 66.6)
+    t.penup()
+    t.right(90)
+    t.forward(133.2)
+    t.left(90)
+    t.pendown()
+    retangulo_base(160, 66.6)
+
+def triangulo(altura, hipotenusa, base):
+    t.forward(altura)     
+    t.right(115)      
+    t.forward(hipotenusa)
+    t.right(155)          
+    t.forward(base)
+    
+def triangulo_invert(altura, hipotenusa, base):
+    t.forward(base)
+    t.left(115)      
+    t.forward(hipotenusa)
+    t.left(155)          
+    t.forward(altura) 
+
+def passagem (girar, deslocar, angular,avançar):
+    t.penup()
+    t.left(girar)
+    t.forward(deslocar)
+    t.right(angular)
+    t.forward(avançar)
+    t.pendown()
+
+#Retangulo base
+
+t.fillcolor((200, 16, 46))
+t.begin_fill()
+
+retangulo_base(400, 200)
+
+t.end_fill()
+
+#Retangulos brancos
+
+t.fillcolor((255, 255, 255))
+t.begin_fill()
+
+conj_retangulo_maior ()
+
+t.end_fill()
+
+passagem (90, 118.2, 90, 225)
+
+t.begin_fill()
+
+conj_retangulo_maior ()
+
+t.end_fill()
+
+passagem (180, 225, 90, 118)
+t.right (90)
+
+#Retângulos menores
+conj_retangulo_menor()
+
+passagem (90, 133.2, 90, 240)
+
+conj_retangulo_menor()
+
+passagem (180, 240, 90, 66.6)
+
+#Triângulos e ângulos do lado 1
+
+t.fillcolor((200, 16, 46))
+t.begin_fill()
+triangulo(67, 158, 143)
+t.right (90)
+t.end_fill()
+
+t.fillcolor ((255, 255, 255))
+t.begin_fill ()
+triangulo(52 , 123, 112)
+t.end_fill ()
+
+t.fillcolor((21, 33, 105))
+t.begin_fill()
+t.right(90)
+triangulo(43, 102, 92) 
+t.end_fill() 
+
+t.right(90)
+t.forward(66.6)
+t.right(90)
+t.forward(160)
+t.right(90)
+
+t.fillcolor((21, 33, 105))
+t.begin_fill()
+triangulo(52 , 124, 112) 
+t.end_fill() 
+
+#Triângulos e ângulos do lado 2
+
+t.forward (80)
+t.right (90)
+
+t.fillcolor((21, 33, 105))
+t.begin_fill()
+triangulo_invert(107, 118, 50)
+t.end_fill() 
+
+t.left (90)
+t.forward (60)
+t.left (115)
+
+t.fillcolor((200, 16, 46))
+t.begin_fill()
+
+t.forward (141)
+t.right (25)
+
+t.forward (30)
+t.right (155)
+
+t.forward (159)
+t.right (25)
+
+t.forward (13)
+t.right(90)
+
+t.forward(9)
+t.end_fill() 
+
+t.forward (58)
+t.right (90)
+t.forward (160)
+t.right (90)
+t.forward (66)
+t.left (180)
+
+t.fillcolor((21, 33, 105))
+t.begin_fill()
+triangulo_invert(92, 102, 43)
+t.end_fill() 
+
+t.right (90)
+t.forward (66.8)
+
+#Triângulos e ângulos do lado 3
+
+t.fillcolor((200, 16, 46))
+t.begin_fill()
+triangulo(66, 158, 143)
+t.right (90)
+t.end_fill()
+
+t.fillcolor ((255, 255, 255))
+t.begin_fill ()
+triangulo(52 , 123, 112)
+t.end_fill ()
+
+t.fillcolor((21, 33, 105))
+t.begin_fill()
+t.right(90)
+triangulo(45, 105, 95)
+t.end_fill() 
+
+t.right(90)
+t.forward(67)
+t.right(90)
+t.forward(160)
+t.right(90)
+
+t.fillcolor((21, 33, 105))
+t.begin_fill()
+triangulo(52 , 122, 112)
+t.end_fill() 
+
+#Triângulos e ângulos do lado 4
+
+t.forward (79)
+t.right (90)
+
+t.fillcolor((21, 33, 105))
+t.begin_fill()
+triangulo_invert(111 , 122, 51)
+t.end_fill() 
+
+t.left (90)
+t.forward (60)
+t.left (115)
+
+t.fillcolor((200, 16, 46))
+t.begin_fill()
+
+t.forward (142)
+t.right (25)
+
+t.forward (30)
+t.right (155)
+
+t.forward (160)
+t.right (25)
+
+t.forward (14)
+t.right(90)
+
+t.forward(9)
+t.end_fill()
+
+t.forward (58)
+t.right (90)
+t.forward (160)
+t.right (90)
+t.forward (66)
+t.left (180)
+
+t.fillcolor((21, 33, 105))
+t.begin_fill()
+triangulo_invert(92, 103, 43)
+
+t.end_fill() 
+
+turtle.done()
